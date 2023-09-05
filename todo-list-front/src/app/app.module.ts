@@ -16,11 +16,11 @@ import { FakeRestService } from "./intercepters/fake-rest.service";
     HttpClientModule,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: FakeRestService,
-      multi: true,
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: FakeRestService,
+    //   multi: true,
+    // }
   ],
   bootstrap: [AppComponent]
 })

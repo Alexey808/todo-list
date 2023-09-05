@@ -1,0 +1,16 @@
+.idea
+.vscode
+.editorconfig
+
+todo-list-back/node_modules
+todo-list-back/public
+todo-list-back/.idea
+todo-list-back/.vscode
+todo-list-back/.editorconfig
+
+todo-list-front/node_modules
+todo-list-front/dist
+todo-list-front/.idea
+todo-list-front/.vscode
+todo-list-front/.angular
+todo-list-front/.editorconfig

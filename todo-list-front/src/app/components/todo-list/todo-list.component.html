@@ -1,0 +1,13 @@
+<div class="title">TODO LIST</div>
+<div class="new-todo-button">
+  <button (click)="newTodo()">Добавить новый TODO</button>
+</div>
+<div *ngIf="todoList() as list;" class="todo-list">
+  <ng-container *ngFor="let todo of list">
+    <app-todo-item
+      [todoItem]="todo"
+      (updateTodo)="updateTodo($event)"
+      (deleteTodo)="deleteTodo($event)"
+    ></app-todo-item>
+  </ng-container>
+</div>

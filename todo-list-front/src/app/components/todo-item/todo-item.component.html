@@ -1,0 +1,30 @@
+<form [formGroup]="todoForm">
+  <div *ngIf="!!todo" class="todo-item">
+    <div class="todo-line">
+      <div>
+        <input type="checkbox" formControlName="done" (change)="onDone()"/>
+      </div>
+      <div class="todo-right-space">
+        <div>
+          <div class="todo-title">
+            <ng-container *ngIf="isEdit; else todoTitleRef">
+              <input type="text" formControlName="title">
+            </ng-container>
+            <ng-template #todoTitleRef>
+              {{todo.title}}
+            </ng-template>
+          </div>
+          <div class="todo-date">{{todo.date | date:'dd.MM.yyyy'}}</div>
+        </div>
+        <div class="todo-buttons">
+          <button (click)="onEdit()" *ngIf="!isEdit && !isSaved; else saveButtonRef">Редактировать</button>
+          <ng-template #saveButtonRef>
+            <button (click)="onSave()">Сохранить</button>
+          </ng-template>
+          <button (click)="onDelete()">Удалить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+

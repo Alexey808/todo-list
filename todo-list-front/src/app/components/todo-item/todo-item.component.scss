@@ -1,0 +1,40 @@
+.todo-item {
+  background-color: #faffe0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px -2px #363a00;
+}
+
+.todo-right-space {
+  display: flex;
+  justify-content: space-between;
+  flex: 100%;
+  align-items: center;
+}
+
+.todo-line {
+  display: flex;
+  & > div:first-child {
+    display: flex;
+    margin-right: 10px;
+  }
+  & > div:last-child {
+    width: auto;
+  }
+
+  .todo-title {
+    font-size: 20px;
+  }
+  .todo-date {
+    font-size: 14px;
+    color: #4e4e4e;
+  }
+  .todo-buttons {
+    display: flex;
+    align-items: center;
+    & > button {
+      margin-left: 10px;
+    }
+  }
+}

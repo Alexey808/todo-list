@@ -15,9 +15,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to application' });
-});
+require('./app/routes/todo.routes')(app);
 
 require('dotenv').config();
 const PORT = process.env.PORT || 8080;

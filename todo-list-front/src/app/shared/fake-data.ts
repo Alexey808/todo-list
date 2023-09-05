@@ -3,7 +3,7 @@ import { idGen } from "../utils/id-gen";
 
 export const TODO_LIST: ITodo[] = Array.from({length: 10}).map((_, i) => {
   return {
-    date: new Date().toDateString(),
+    date: new Date().getTime(),
     done: false,
     id: idGen(),
     title: `Todo-${i}`

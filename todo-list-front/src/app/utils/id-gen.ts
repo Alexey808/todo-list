@@ -1,3 +1,3 @@
 export function idGen(): string {
-  return `t-${Math.round(Math.random() * (99999 - 10000) + 10000)}`;
+  return `t-${Math.floor(Math.random() * new Date().getTime())}`;
 }

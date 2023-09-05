@@ -1,26 +1,31 @@
 const express = require('express');
-const cors = require('cors');
+const path = require('path');
 
-// Data base
-require('./app/db_connection');
-
-// Server
 const app = express();
 
-const corsOptions = {
-  origin: 'http://localhost:8081'
-};
+/* Подключение БД */
+require('./app/db_connection');
 
-app.use(cors(corsOptions));
-
-// parse requests of content-type - application/json
+/* Парсинг запросов content-type - application/json */
 app.use(express.json());
 
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
+/* Подключение build сборки фронта */
+app.use(express.static(__dirname + '/public/front'));
 
+/* Настройка обработчика запросов */
+app.get('*', (req, res, next) => {
+  // если это не api, маршрутизируем фронт, иначе продолжаем выполнение
+  if (!req.path.includes('/api')) {
+    res.sendFile(path.join(__dirname, '/public/front', 'index.html'));
+  } else {
+    next();
+  }
+});
+
+/* API */
 require('./app/routes/todo.routes')(app);
 
+/* Запуск сервера */
 require('dotenv').config();
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

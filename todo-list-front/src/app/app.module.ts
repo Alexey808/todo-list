@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { FakeRestService } from "./intercepters/fake-rest.service";
+import { environment } from '@env/environment';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { FakeRestService } from "./intercepters/fake-rest.service";
     HttpClientModule,
   ],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: FakeRestService,
-    //   multi: true,
-    // }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useFactory: () => {
+        return environment.production ? {} : new FakeRestService();
+      },
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })

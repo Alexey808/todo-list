@@ -1,6 +1,7 @@
 .idea
 .vscode
 .editorconfig
+.lh
 
 todo-list-back/node_modules
 todo-list-back/public

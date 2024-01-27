@@ -99,6 +99,18 @@
             ],
             "scripts": []
           }
+        },
+        "e2e": {
+          "builder": "@puppeteer/ng-schematics:puppeteer",
+          "options": {
+            "devServerTarget": "todo-list-front:serve",
+            "testRunner": "jest"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "todo-list-front:serve:production"
+            }
+          }
         }
       }
     }

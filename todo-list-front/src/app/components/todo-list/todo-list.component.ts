@@ -56,7 +56,7 @@ export class TodoListComponent implements OnInit {
   }
 
   public newTodo(): void {
-    const newTodo = new TodoModel() as ITodo;
+    const newTodo = { ...new TodoModel() };
 
     this.todoApiService.addTodo(newTodo).pipe(
       tap(() => {

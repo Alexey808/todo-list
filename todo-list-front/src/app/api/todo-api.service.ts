@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http";
+import { Observable, catchError, throwError } from "rxjs";
 import { ITodo } from "../components/todo-item/todo-item.interfaces";
 
 @Injectable({
@@ -20,9 +20,9 @@ export class TodoApiService {
     return this.httpClient.post<boolean>('api/todo/add', { data: todo });
   }
 
-  public deleteTodo(todoId: string): Observable<any> {
+  public deleteTodo(todoId: string): Observable<boolean> {
     const params = new HttpParams().set('todoId', todoId);
-    return this.httpClient.delete('api/todo/delete', { params });
+    return this.httpClient.delete<boolean>('api/todo/delete', { params });
   }
 
   public updateTodo(todo: ITodo): Observable<boolean> {

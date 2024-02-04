@@ -1,6 +1,6 @@
-<div class="title">TODO LIST</div>
+<div class="title" [attr.data-id]="'todo-list-title'">TODO LIST</div>
 <div class="new-todo-button">
-  <button (click)="newTodo()">Добавить новый TODO</button>
+  <button (click)="newTodo()" [attr.data-id]="'todo-list_add-new-todo'">Добавить новый TODO</button>
 </div>
 <div *ngIf="todoList() as list;" class="todo-list">
   <ng-container *ngFor="let todo of list">

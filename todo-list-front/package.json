@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:watch": "jest --watch",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e --port 4201"
   },
   "private": true,
   "dependencies": {

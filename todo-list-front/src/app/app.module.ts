@@ -18,13 +18,13 @@ import { environment } from '@env/environment';
     HttpClientModule,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useFactory: () => {
-        return environment.production ? {} : new FakeRestService();
-      },
-      multi: true,
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useFactory: () => {
+    //     return environment.production ? {} : new FakeRestService();
+    //   },
+    //   multi: true,
+    // }
   ],
   bootstrap: [AppComponent]
 })

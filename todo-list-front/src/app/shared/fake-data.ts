@@ -1,5 +1,5 @@
-import { ITodo } from "../components/todo-item/todo-item.interfaces";
-import { idGen } from "../utils/id-gen";
+import { ITodo } from '../components/todo-item/todo-item.interfaces';
+import { idGen } from '../utils/id-gen';
 
 export const TODO_LIST: ITodo[] = Array.from({length: 10}).map((_, i) => {
   return {
@@ -7,5 +7,5 @@ export const TODO_LIST: ITodo[] = Array.from({length: 10}).map((_, i) => {
     done: false,
     id: idGen(),
     title: `Todo-${i}`
-  }
+  };
 });

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CommonModule } from "@angular/common";
-import { ITodo } from "./todo-item.interfaces";
-import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from '@angular/common';
+import { ITodo } from './todo-item.interfaces';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class TodoItemComponent {
   @Input() public set todoItem(todo: ITodo) {
     this.todo = todo;
     this.setTodoForm(todo);
-  };
+  }
   @Output() public updateTodo: EventEmitter<ITodo> = new EventEmitter<ITodo>();
   @Output() public deleteTodo: EventEmitter<string> = new EventEmitter<string>();
 
@@ -44,7 +44,7 @@ export class TodoItemComponent {
           ? {[todoEntries[0]]: todoEntries[1]}
           : {}
         ),
-      }
+      };
     }, {});
     this.todoForm = this.fb.group(formData);
   }

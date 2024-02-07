@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
 import { TodoApiService } from './todo-api.service';
-import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ITodo } from '../components/todo-item/todo-item.interfaces';
 
 const testTodo: ITodo = {
   date: 946670400000, // 01.01.2000
   done: true,
-  id: "t-100000000000",
-  title: "Todo-0",
-}
+  id: 't-100000000000',
+  title: 'Todo-0',
+};
 
 describe('TodoApiService', () => {
   let service: TodoApiService;

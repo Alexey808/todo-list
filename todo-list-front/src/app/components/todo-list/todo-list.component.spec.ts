@@ -2,18 +2,18 @@ import { ComponentFixture, TestBed, fakeAsync} from '@angular/core/testing';
 
 import { TodoModelStab } from '../todo-item/todo-model.stab';
 import { TodoListComponent } from './todo-list.component';
-import { TodoItemComponent } from "../todo-item/todo-item.component";
-import { TodoApiService } from "../../api/todo-api.service";
-import { of, throwError } from "rxjs";
-import { ActivatedRoute } from "@angular/router";
-import { RouterTestingModule } from "@angular/router/testing";
+import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { TodoApiService } from '../../api/todo-api.service';
+import { of, throwError } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { ITodo } from '../todo-item/todo-item.interfaces';
 
 
 jest.useFakeTimers().setSystemTime(new Date('2000-01-01T00:00:00Z'));
 
 jest.mock('../todo-item/todo-model', () => {
-  return { TodoModel: TodoModelStab}
+  return { TodoModel: TodoModelStab};
 });
 
 const testTodo1 = {
@@ -21,7 +21,7 @@ const testTodo1 = {
   title: 'test-todo1',
   date: new Date('2000-01-01T00:00:00Z').getTime(),
   done: false,
-}
+};
 
 
 
@@ -66,7 +66,7 @@ describe('TodoListComponent', () => {
 
   afterEach(() => {
     jest.useRealTimers();
-  })
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -147,7 +147,7 @@ describe('TodoListComponent', () => {
       date: new Date('2000-01-01T00:00:00Z').getTime(),
       done: false,
       id: 'todo0',
-      title: `Todo-0`,
+      title: 'Todo-0',
     };
 
     beforeEach(() => {

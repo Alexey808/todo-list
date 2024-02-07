@@ -1,11 +1,11 @@
 import { Component, OnInit, signal, WritableSignal } from '@angular/core';
-import { ITodo } from "../todo-item/todo-item.interfaces";
-import { ActivatedRoute } from "@angular/router";
-import { map, take, tap } from "rxjs";
-import { CommonModule } from "@angular/common";
-import { TodoItemComponent } from "../todo-item/todo-item.component";
-import { TodoApiService } from "../../api/todo-api.service";
-import { TodoModel } from "../todo-item/todo-model";
+import { ITodo } from '../todo-item/todo-item.interfaces';
+import { ActivatedRoute } from '@angular/router';
+import { map, take, tap } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { TodoApiService } from '../../api/todo-api.service';
+import { TodoModel } from '../todo-item/todo-model';
 
 
 @Component({
@@ -38,7 +38,7 @@ export class TodoListComponent implements OnInit {
           this.todoList().map((todo) => {
             return todo.id === changedTodo.id ? changedTodo : todo;
           })
-        )
+        );
       }),
       take(1)
     ).subscribe();
@@ -49,7 +49,7 @@ export class TodoListComponent implements OnInit {
       tap(() => {
         this.todoList.set(
           this.todoList().filter((todo) => todo.id !== todoId)
-        )
+        );
       }),
       take(1)
     ).subscribe();

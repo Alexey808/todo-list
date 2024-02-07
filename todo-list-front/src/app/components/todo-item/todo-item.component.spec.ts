@@ -6,9 +6,9 @@ import { By } from '@angular/platform-browser';
 const testTodo: ITodo = {
   date: 946670400000, // 01.01.2000
   done: true,
-  id: "t-100000000000",
-  title: "Todo-0",
-}
+  id: 't-100000000000',
+  title: 'Todo-0',
+};
 
 describe('TodoItemComponent', () => {
   let component: TodoItemComponent;
